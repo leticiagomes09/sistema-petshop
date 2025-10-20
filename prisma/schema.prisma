@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -15,5 +14,5 @@ model Animais {
   dono    String
   idade   Int
 
-  @@map("bruxos")
+  @@map("animais")
 }
