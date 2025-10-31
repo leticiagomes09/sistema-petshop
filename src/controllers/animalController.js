@@ -1,4 +1,4 @@
-import * as AnimalModel from './../models/animalModel.js' 
+import * as AnimalModel from './../models/AnimalModel.js' 
 
 export const listarTodos = async ( req, res) => {
     try {
@@ -72,7 +72,7 @@ export const criar = async (req, res) => {
             });
         }
 
-        const novoanimal = await animalModel.create(dado);
+        const novoanimal = await AnimalModel.create(dado);
 
         res.status(201).json({
             mensagem: 'animal criado com sucesso!',
@@ -100,7 +100,7 @@ export const apagar = async (req, res) => {
             })
         }
 
-        await animalModel.deleteAnimal(id)
+        await AnimalModel.deleteAnimal(id)
 
         res.status(200).json({
             mensagem: 'animal removido com sucesso!',
