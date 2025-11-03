@@ -29,14 +29,14 @@ export const listarTodos = async ( req, res) => {
 
 export const listarUm = async (req, res) => {
     try {
-        const id = req.params.id;
+        const { id }= req.params;
         const animal = await AnimalModel.findById(id);
 
         if (!animal) {
             return res.status(404).json({
                 erro: 'animal não encomtrado!',
                 mensagem: 'Verifique se o id do animal existe',
-                id: id 
+                id: id, 
             })
         }
 
@@ -96,7 +96,7 @@ export const apagar = async (req, res) => {
         if (!animalExiste) {
             return res.status(404).json({
                 erro: 'animal não encontrado com esse id',
-                id: id
+                id: id,
             })
         }
 

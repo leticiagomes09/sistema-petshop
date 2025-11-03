@@ -1,3 +1,4 @@
+import { es } from "@faker-js/faker";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -36,8 +37,8 @@ export const update = async (id, data) => {
         data: {
             ...(data.nome && { nome: data.nome }),
             ...(data.especie && { especie: data.especie }),
+            ...(data.idade && { idade: Number(data.idade) }),
             ...(data.dono && { dono: data.dono }),
-            ...(data.idade && { idade: data.idade }),
     
         }
     })
